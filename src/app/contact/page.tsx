@@ -5,6 +5,7 @@ import Link from 'next/link'
 import data from '../data'
 import axios from 'axios'
 import Swal from 'sweetalert2'
+import FlyInSection from '../components/FlyInSection/FlyInSection'
 
 const Toast = Swal.mixin({
     toast: true,
@@ -62,15 +63,19 @@ function Page() {
                 <div className='md:max-w-[85%] m-auto'>
 
 
-                    <div className='sm:flex justify-between gap-[7rem] items-baseline'>
+                    <div className='sm:flex justify-between md:gap-[7rem] items-baseline'>
                         <div className='sm:w-[40%]'>
-                            <header className='text-[#449DD1] text-[20px] md:text-[30px] md:w-[100%] font-extrabold my-[1.5rem]'>
-                                <h1>Get in Touch</h1>
-                            </header>
-                            <p className='text-[14px] leading-[25px] font-[400]'>
-                                If you have any questions, require further assistance or want to book an appointment give us a call or send us a message.
-                            </p>
-
+                            <FlyInSection>
+                                <header className='text-[#449DD1] text-[20px] md:text-[30px] md:w-[100%] font-extrabold my-[1.5rem]'>
+                                    <h1>Get in Touch</h1>
+                                </header>
+                            </FlyInSection>
+                            <FlyInSection>
+                                <p className='text-[14px] leading-[25px] font-[400]'>
+                                    If you have any questions, require further assistance or want to book an appointment give us a call or send us a message.
+                                </p>
+                            </FlyInSection>
+                            <FlyInSection>
                             <div className='md:flex justify-between my-[2rem]'>
                                 <div className="email">
                                     <p className='text-[14px] leading-[25px]'>Email:</p>
@@ -85,11 +90,13 @@ function Page() {
                                     </Link>
                                 </div> */}
                             </div>
+
+                            </FlyInSection>
                             <div className='mr-10'>
                                 <iframe
                                     src={src}
-                                    width="400"
-                                    height="450"
+                                    width="360"
+                                    height="250"
                                     style={{ border: 0 }}
                                     allowFullScreen
                                     loading="lazy"
@@ -103,20 +110,20 @@ function Page() {
                             <header className='text-[#449DD1] text-[20px] md:text-[30px] m-auto font-extrabold my-[1.5rem]'>
                                 <h1>Email us</h1>
                             </header>
-                            <form className='grid gap-[2rem] p-[6rem] shadow-2xl rounded-[2rem]' onSubmit={handleSubmit}>
+                            <form className='grid gap-[2rem] p-5 md:p-0 shadow-1xl rounded-[2rem]' onSubmit={handleSubmit}>
                                 <div>
                                     <label className="text-[13.5px]" htmlFor="name">Name:</label><br />
-                                    <input type="text" id='name' required value={name} onChange={(e)=>setName(e.target.value)} placeholder='Micheal Collin' className='outline-none border-[1px] border-[#0000006d] bg-transparent p-[1rem] w-full rounded-full' />
+                                    <input type="text" id='name' required value={name} onChange={(e)=>setName(e.target.value)} placeholder='Micheal Collin' className='outline-none border-[1px] border-[#0000006d] bg-transparent p-[1rem] w-full rounded-[10px]' />
                                 </div>
 
                                 <div>
                                     <label className="text-[13.5px]" htmlFor="email">Email:</label><br />
-                                    <input type="email" id='email' required value={email} onChange={(e)=>setEmail(e.target.value)} placeholder='email@example.com' className='outline-none border-[1px] border-[#0000006d] bg-transparent p-[1rem] w-full rounded-full' />
+                                    <input type="email" id='email' required value={email} onChange={(e)=>setEmail(e.target.value)} placeholder='email@example.com' className='outline-none border-[1px] border-[#0000006d] bg-transparent p-[1rem] w-full rounded-[10px]' />
                                 </div>
 
                                 <div>
                                     <label className="text-[13.5px]" htmlFor="message">Message:</label><br />
-                                    <textarea name="comment" id="message" required value={message} onChange={(e)=>setMessage(e.target.value)} placeholder='Leave us a Message...' className='outline-none border-[1px] border-[#0000006d] bg-transparent p-[2rem] w-full rounded-full'></textarea>
+                                    <textarea name="comment" id="message" required value={message} onChange={(e)=>setMessage(e.target.value)} placeholder='Leave us a Message...' className='outline-none border-[1px] border-[#0000006d] bg-transparent p-[2rem] w-full rounded-[10px]'></textarea>
                                 </div>
 
                                 <div className='text-center '>
