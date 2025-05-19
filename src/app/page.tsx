@@ -303,7 +303,7 @@ export default function Home() {
             </div>
 
             <div className="mt-[1rem]">
-              <div className="img h-[180px] md:h-[300px] overflow-hidden ">
+              {/* <div className="img h-[180px] md:h-[300px] overflow-hidden ">
                 <FlyInSection>
                   <iframe
                     className="md:h-[320px] md:w-[590px] w-screen h-[50vh]"
@@ -314,11 +314,22 @@ export default function Home() {
                     allowFullScreen
                   ></iframe>
                 </FlyInSection>
-                {/* <Image src={img1} className=' object-cover h-full w-full scale-[180%] md:scale-[100%]' alt="hernia" /> */}
-              </div>
+              </div> */}
+<div className="img overflow-hidden">
+  <FlyInSection>
+    <iframe
+      className="w-screen h-[50vh] md:h-[320px] md:w-[590px]"
+      src="https://www.youtube.com/embed/Oxar0r6-HEU"
+      title="YouTube video player"
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowFullScreen
+    ></iframe>
+  </FlyInSection>
+</div>
 
-              <div className="text p-4 pl-0 font-[500] md:w-[80%]">
-                <h5 className="font-bold text-[18px]">Condition</h5>
+              <div className="text p-4 pl-4 font-[500] md:w-[80%]">
+                <h5 className="font-bold text-[18px] ">Condition</h5>
                 <FlyInSection>
                   <p>
                     An incarcerated hernia can cut off blood flow to part of
@@ -344,7 +355,85 @@ export default function Home() {
         </div>
       </section>
       <FlyInSection>
-        <section className="get-inTouch relative mb-[7rem]">
+        <section className="get-inTouch min-h-[70vh] flex items-center justify-center px-4 py-10 bg-[#f5f5f5]">
+          <div className="w-full max-w-[550px] bg-white p-8 md:p-10 rounded-lg shadow-md">
+            <FlyInSection>
+              <header className="text-center mb-6">
+                <h5 className="text-[#449DD1] font-bold text-[23px] md:text-[26px]">
+                  Get In Touch
+                </h5>
+                <p>Improve the quality of your life</p>
+              </header>
+            </FlyInSection>
+
+            <FlyInSection>
+              <form
+                className="bg-transparent grid grid-cols-2 gap-4"
+                onSubmit={handleSubmit}
+              >
+                <div className="col-span-2 border p-3 rounded-xl">
+                  <input
+                    type="text"
+                    required
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder="Name"
+                    className="w-full outline-none border-none"
+                  />
+                </div>
+                <div className="border p-3 rounded-xl col-span-2 md:col-span-1">
+                  <input
+                    type="email"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Email"
+                    className="w-full outline-none border-none"
+                  />
+                </div>
+                <div className="border p-3 rounded-xl col-span-2 md:col-span-1">
+                  <input
+                    type="tel"
+                    placeholder="Phone"
+                    required
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    className="w-full outline-none border-none"
+                  />
+                </div>
+                <div className="col-span-2 border p-3 rounded-xl">
+                  <select
+                    name="reason-for-contact"
+                    id="reason"
+                    required
+                    value={type}
+                    onChange={(e) => setType(e.target.value)}
+                    className="w-full outline-none border-none"
+                  >
+                    <option value="">Select Reason for contact</option>
+                    <option value="surgery-appointment">
+                      Surgery Appointment
+                    </option>
+                    <option value="in-house-appointment">
+                      In-house Appointment
+                    </option>
+                    <option value="others">Others</option>
+                  </select>
+                </div>
+                <div className="col-span-2">
+                  <button
+                    type="submit"
+                    className="w-full py-3 rounded-full text-white bg-[#449DD1] font-semibold"
+                  >
+                    SUBMIT
+                  </button>
+                </div>
+              </form>
+            </FlyInSection>
+          </div>
+        </section>
+
+        {/* <section className="get-inTouch relative mb-[7rem]">
           <div className="md:max-w-[85%] m-auto p-4 md:pb-[4rem]">
             <div className="form bg-[#FFF] md:w-[550px] m-auto p-10 rounded-lg relative  top-[100px] md:left-[-30%] shadow-md">
               <FlyInSection>
@@ -417,7 +506,7 @@ export default function Home() {
               </FlyInSection>
             </div>
           </div>
-        </section>
+        </section> */}
       </FlyInSection>
       <section className="do-you-need">
         <div className="md:max-w-[85%] m-auto p-4">
@@ -526,11 +615,12 @@ export default function Home() {
                 {data.city} HERNIA SPECIALISTS
               </h4> */}
               {/* <h4 className="uppercase text-[#449DD1] text-[clamp(1.5rem,5vw,2.5rem)] font-extrabold text-center w-full whitespace-nowrap mx-auto my-[2rem]">
-  {data.city} HERNIA SPECIALISTS
-</h4> */}
-<h4 className="uppercase text-[#449DD1] text-[clamp(1.5rem,5vw,2.5rem)] font-extrabold text-center w-full mx-auto my-[2rem]">
-  <span className="block md:inline">{data.city}</span> HERNIA SPECIALISTS
-</h4>
+                {data.city} HERNIA SPECIALISTS
+              </h4> */}
+              <h4 className="uppercase text-[#449DD1] text-[clamp(1.5rem,5vw,2.5rem)] font-extrabold text-center w-full mx-auto my-[2rem]">
+                <span className="block md:inline">{data.city}</span> HERNIA
+                SPECIALISTS
+              </h4>
             </header>
           </FlyInSection>
           <div className="cards md:flex  gap-7 my-10">
@@ -540,7 +630,7 @@ export default function Home() {
                   <h5 className="text-[#449DD1] text-[20px] md:text-[30px] font-extrabold  md:w-[80%] my-4">
                     How Do I Know If My Hernia Needs Surgery?
                   </h5>
-                  <p className="text-[13px] md:text-[16px]">
+                  <p className="text-[13px] md:text-[16px] pb-4 md:pb-0">
                     A hernia is a common but frequently misunderstood condition.
                     You may have a hernia if you have swelling and a bulge that
                     is able to be “pushed back” into your abdomen. If it
@@ -580,6 +670,16 @@ export default function Home() {
           <div className="cards flex flex-col-reverse md:flex-row  gap-7">
             <FlyInSection>
               <div className="md:p-7 rounded-xl">
+              <motion.div
+                  ref={ref}
+                  initial={{ scale: 1.2 }} // initial zoomed-in
+                  animate={controls}
+                  className="overflow-hidden rounded-xl"
+                >
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ duration: 0.3 }}
+                  >
                 <Image
                   src={
                     "https://res.cloudinary.com/wise-solution-inc/image/upload/v1744251241/ChatGPT_Image_Apr_10_2025_03_02_56_AM_1_vmbroo.png"
@@ -587,24 +687,26 @@ export default function Home() {
                   alt="Hernia Image"
                   width={"2000"}
                   height={"100"}
+                  className="w-[2000] h-auto object-cover"
                 />
+                 </motion.div>
+                 </motion.div>
               </div>
             </FlyInSection>
             <div className="flex items-center">
-
-            <FlyInSection>
-              <div className="md:p-7  rounded-xl ">
-                <h5 className="text-[#449DD1] text-[20px] md:text-[30px] font-extrabold  md:w-[80%] my-4">
-                  How Long Does a Hernia Operation Take?
-                </h5>
-                <p className="text-[13px] md:text-[16px]">
-                  The operation usually takes about 30 to 45 minutes to complete
-                  and you&apos;ll usually be able to go home on the same day.
-                  Some people stay in hospital overnight if they have other
-                  medical problems or live on their own.
-                </p>
-              </div>
-            </FlyInSection>
+              <FlyInSection>
+                <div className="md:p-7  rounded-xl ">
+                  <h5 className="text-[#449DD1] text-[20px] md:text-[30px] font-extrabold  md:w-[80%] my-4">
+                    How Long Does a Hernia Operation Take?
+                  </h5>
+                  <p className="text-[13px] md:text-[16px]">
+                    The operation usually takes about 30 to 45 minutes to
+                    complete and you&apos;ll usually be able to go home on the
+                    same day. Some people stay in hospital overnight if they
+                    have other medical problems or live on their own.
+                  </p>
+                </div>
+              </FlyInSection>
             </div>
           </div>
         </div>
